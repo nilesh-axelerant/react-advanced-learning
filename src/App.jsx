@@ -1,36 +1,17 @@
 import { useState } from 'react'
 import './App.css'
-import { CustomModal } from './CustomModal'
-import { DialogModal } from './DialogModal'
+import { ModalExample } from './ModalExample'
+import { DatePicker } from './DatePicker'
 
 function App() {
 
-  const [isCustomModalOpen, setIsCustomModalOpen] = useState(false)
-  const [isDialogModalOpen, setIsDialogModalOpen] = useState(false)
+  const [datevalue, setDatevalue] = useState(new Date())
   return (
-    <div>
-      <button onClick={() => setIsCustomModalOpen(true)}>Show Custom Modal</button>
+    <>
+      <ModalExample />
 
-       <button onClick={() => setIsDialogModalOpen(true)}>
-        Show Dialog Modal
-      </button>
-
-      <CustomModal isOpen={isCustomModalOpen} onClose={() => setIsCustomModalOpen(false)} >
-        <p>
-          This is a <strong>DIALOG</strong> modal
-        </p>
-        <button onClick={() => setIsDialogModalOpen(false)}>Close</button>
-      </CustomModal>
-
-      <DialogModal
-        isOpen={isDialogModalOpen}
-        onClose={() => setIsDialogModalOpen(false)} >
-        <p>
-          This is a <strong>DIALOG</strong> modal
-        </p>
-        <button onClick={() => setIsDialogModalOpen(false)}>Close</button>
-      </DialogModal>
-    </div>
+      <DatePicker value={new Date()} onChange={setDatevalue} />
+    </>
   )
 }
 
