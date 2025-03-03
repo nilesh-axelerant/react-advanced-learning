@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { ModalExample } from './ModalExample'
 import { DatePicker } from './DatePicker'
+import { GridInfiniteScroll } from './GridInfiniteScroll'
 
 function App() {
 
@@ -11,6 +12,8 @@ function App() {
       <ModalExample />
 
       <DatePicker value={new Date()} onChange={setDatevalue} />
+
+      <GridInfiniteScroll />
     </>
   )
 }
